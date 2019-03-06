@@ -24,6 +24,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ``` bash
 http://element-cn.eleme.io/#/zh-CN/component/quickstart
+npm i element-ui -S
 ```
 
 
