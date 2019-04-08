@@ -19,10 +19,10 @@
               <i class="el-icon-view"></i>
               <span slot="title">JSON 格式化</span>
             </el-menu-item>
-            <!--<el-menu-item index="qrcode">-->
-              <!--<i class="el-icon-menu"></i>-->
-              <!--<span slot="title">二维码生成器</span>-->
-            <!--</el-menu-item>-->
+            <el-menu-item index="qrcode">
+              <i class="el-icon-menu"></i>
+              <span slot="title">二维码生成器</span>
+            </el-menu-item>
           </el-menu>
         </el-aside>
         <el-main>

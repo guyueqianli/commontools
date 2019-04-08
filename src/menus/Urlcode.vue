@@ -1,7 +1,12 @@
 <template>
   <div>
     <el-row class="content">
-      <el-input type="textarea" rows="10" placeholder="请输入内容" v-model="textarea"></el-input>
+      <el-input
+        type="textarea"
+        rows="10"
+        placeholder="请输入内容"
+        v-model="textarea"
+        resize="none"></el-input>
       <div class="content-button">
         <el-button type="primary" plain round @click="resetUrlencode">UrlEncode编码</el-button>
         <el-button type="primary" plain round @click="resetUrldecode">UrlDecode解码</el-button>
@@ -39,7 +44,7 @@
 <style scoped>
   .content {
     margin-top: 20px;
-    padding: 40px;
+    padding: 40px 100px;
     background: #fafafa;
     font-size: 14px;
     border: 1px solid #dcdcdc;

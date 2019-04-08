@@ -23,6 +23,11 @@ export default new Router({
       path: '/jsonformat',
       name: 'jsonformat',
       component: () => import('../menus/Jsonformat')
+    },
+    {
+      path: '/qrcode',
+      name: 'qrcode',
+      component: () => import('../menus/Qrcode')
     }
   ]
 })
