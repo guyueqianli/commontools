@@ -37,3 +37,9 @@ npm i element-ui -S
 # install jsoneditor
 npm install jsoneditor
 ```
+
+引入了 qrcode 二维码生成插件
+``` bash
+# install qrcode
+npm install --save qrcode
+```
