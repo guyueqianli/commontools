@@ -19,10 +19,10 @@
               <i class="el-icon-view"></i>
               <span slot="title">JSON 格式化</span>
             </el-menu-item>
-            <el-menu-item index="qrcode">
-              <i class="el-icon-menu"></i>
-              <span slot="title">二维码生成器</span>
-            </el-menu-item>
+            <!--<el-menu-item index="qrcode">-->
+              <!--<i class="el-icon-menu"></i>-->
+              <!--<span slot="title">二维码生成器</span>-->
+            <!--</el-menu-item>-->
           </el-menu>
         </el-aside>
         <el-main>
@@ -34,10 +34,43 @@
 </template>
 
 <script>
-    export default {
-        name: 'App'
-    }
+  export default {
+    name: 'App'
+  }
 </script>
 
-<style  scoped src="./style/home.css">
+<style  scoped>
+  #app {
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: left;
+    color: #2c3e50;
+    margin: 0;
+  }
+
+  .el-header {
+    background-color: #64abe8;
+  }
+
+  .header-name {
+    position: relative;
+    display: inline-block;
+    font-size: 24px;
+    top: 10px;
+    left: 26px;
+    color: #FFFFFF;
+  }
+  .el-header > p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .el-main {
+    padding: 20px 40px 20px 40px;
+  }
+
+  .bq-first-menu{
+    margin-left: 12px;
+  }
 </style>

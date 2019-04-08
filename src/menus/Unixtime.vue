@@ -24,60 +24,60 @@
   </div>
 </template>
 <script>
-    export default {
-        name: 'Unixtime',
-        mounted() {
-            this.start();
-        },
-        data() {
-            return {
-                timestamp: '',
-                time: 0,
-                opttimestamp: '',
-                bjtime: '',
-                optbjtime: '',
-                totimestamp: ''
-            }
-        },
-        methods: {
-            showTime() {
-                this.timestamp = parseInt((new Date().getTime()) / 1000);
-            },
-            start() {
-                clearInterval(this.time);
-                this.time = setInterval(this.showTime, 500);
-            },
-            stop() {
-                clearInterval(this.time);
-            },
-            reset() {
-                this.showTime();
-            },
+  export default {
+    name: 'Unixtime',
+    mounted() {
+      this.start();
+    },
+    data() {
+      return {
+        timestamp: '',
+        time: 0,
+        opttimestamp: '',
+        bjtime: '',
+        optbjtime: '',
+        totimestamp: ''
+      }
+    },
+    methods: {
+      showTime() {
+        this.timestamp = parseInt((new Date().getTime()) / 1000);
+      },
+      start() {
+        clearInterval(this.time);
+        this.time = setInterval(this.showTime, 500);
+      },
+      stop() {
+        clearInterval(this.time);
+      },
+      reset() {
+        this.showTime();
+      },
 
-            // 将 时间戳 转换成 北京时间
-            changeBjtime() {
-                let d = new Date(this.opttimestamp * 1000);
-                let month = '' + (d.getMonth() + 1);
-                let day = '' + d.getDate();
-                let year = '' + d.getFullYear();
-                let hour = '' + d.getHours();
-                let minute = '' + d.getMinutes();
-                let second = '' + d.getSeconds();
-                month = month.length < 2 ? '0' + month : month;
-                day = day.length < 2 ? '0' + day : day;
-                hour = hour.length < 2 ? '0' + hour : hour;
-                minute = minute.length < 2 ? '0' + minute : minute;
-                second = second.length < 2 ? '0' + second : second;
-                this.bjtime = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
-            },
+      // 将 时间戳 转换成 北京时间
+      changeBjtime() {
+        let d = new Date(this.opttimestamp * 1000);
+        let month = '' + (d.getMonth() + 1);
+        let day = '' + d.getDate();
+        let year = '' + d.getFullYear();
+        let hour = '' + d.getHours();
+        let minute = '' + d.getMinutes();
+        let second = '' + d.getSeconds();
+        month = month.length < 2 ? '0' + month : month;
+        day = day.length < 2 ? '0' + day : day;
+        hour = hour.length < 2 ? '0' + hour : hour;
+        minute = minute.length < 2 ? '0' + minute : minute;
+        second = second.length < 2 ? '0' + second : second;
+        this.bjtime = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
+      },
 
-            // 将 北京时间 转化成 时间戳
-            changeUnixtime() {
-                let date = new Date(this.optbjtime);
-                this.totimestamp = parseInt(Date.parse(date) / 1000);
-            },
-        }
+      // 将 北京时间 转化成 时间戳
+      changeUnixtime() {
+        let date = new Date(this.optbjtime);
+        this.totimestamp = parseInt(Date.parse(date) / 1000);
+      },
     }
+  }
 </script>
 
 <style scoped>

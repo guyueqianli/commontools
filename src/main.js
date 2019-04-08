@@ -1,31 +1,26 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import './lib/element-ui/index.css';
-import 'jsoneditor/dist/jsoneditor.min.css';
-import 'jsoneditor/dist/jsoneditor.min';
-import jsoneditor from 'jsoneditor';
-
-
+import 'element-ui/lib/theme-chalk/index.css'
 
 import {
-    Container,
-    Header,
-    Aside,
-    Main,
-    Submenu,
-    Menu,
-    MenuItem,
-    MenuItemGroup,
-    Row,
-    Col,
-    Button,
-    ButtonGroup,
-    Input
+  Container,
+  Header,
+  Aside,
+  Main,
+  Submenu,
+  Menu,
+  MenuItem,
+  MenuItemGroup,
+  Row,
+  Col,
+  Button,
+  ButtonGroup,
+  Input
 } from 'element-ui'
 
-Vue.config.productionTip = false;
-Vue.prototype.$jsoneditor = jsoneditor;
+
+Vue.config.productionTip = false
 
 Vue.use(Container);
 Vue.use(Header);
@@ -43,8 +38,8 @@ Vue.use(Input);
 
 
 new Vue({
-    el: '#app',
-    router,
-    components: { App },
-    template: '<App/>'
-});
+  el: '#app',
+  router,
+  components: { App },
+  template: '<App/>'
+})
