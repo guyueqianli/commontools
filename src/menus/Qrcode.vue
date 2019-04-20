@@ -10,17 +10,18 @@
           resize="none"></el-input>
         <div class="content-button">
           <el-button type="primary" plain round @click="buildQrcode">生成二维码</el-button>
+          <el-button type="text" @click="emptyText">清空结果</el-button>
         </div>
       </div>
       <div class="content-right">
-        <canvas id="canvas"></canvas>
+        <div id="qrcode"></div>
         <div class="content-label">此处生成二维码</div>
       </div>
     </el-row>
   </div>
 </template>
 <script>
-  import QRCode from 'qrcode'
+  import QRCode from 'qrcodejs2'
   export default {
     name: 'Qrcode',
     components: {
@@ -34,12 +35,21 @@
     methods: {
       buildQrcode() {
         if(this.textData !== '') {
-          var canvas = document.getElementById('canvas')
-          QRCode.toCanvas(canvas, this.textData, function (error) {
-            if (error) console.error(error)
-            console.log('success!');
-          })
+          document.getElementById('qrcode').innerHTML = ''
+          let qrcode = new QRCode('qrcode', {
+            width: 250, //图像宽度
+            height: 250, //图像高度
+            colorDark : "#000000", //前景色
+            colorLight : "#ffffff", //背景色
+            text: this.textData,
+            typeNumber:4,
+            correctLevel : QRCode.CorrectLevel.H
+          });
         }
+      },
+      emptyText() {
+        this.textData = ''
+        document.getElementById('qrcode').innerHTML = ''
       }
     }
   }
@@ -73,9 +83,9 @@
     margin-top: 20px;
     color: #8c939d;
   }
-  #canvas {
-    width: 250px!important;
-    height: 250px!important;
+  #qrcode {
+    width: 250px;
+    height: 250px;
   }
 
 </style>
