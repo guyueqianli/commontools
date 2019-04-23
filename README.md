@@ -43,3 +43,12 @@ npm install jsoneditor
 # install qrcode
 npm install --save qrcode
 ```
+
+卸载 qrcode，换引入 qrcodejs2 插件
+``` bash
+# uninstall qrcode
+npm uninstall qrcode
+# install qrcodejs2
+npm install --save qrcodejs2
+```
+
